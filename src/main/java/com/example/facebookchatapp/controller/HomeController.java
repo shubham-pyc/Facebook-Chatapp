@@ -1,5 +1,8 @@
 package com.example.facebookchatapp.controller;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String helloWorld(){
-		return "This is the new update";
+		File file = new File("output.html");
+		if(file.exists()){
+			return file.toString();
+		}
+		return null;
 	}
 	
 	@RequestMapping(value="/callback",method=RequestMethod.GET)
@@ -24,6 +31,20 @@ public class HomeController {
 			return allRequestParams.get("hub.challenge");
 		
 		return allRequestParams.toString();
+	}
+	
+@RequestMapping(value="/callback",method=RequestMethod.POST)
+	
+	public String sendResponse(@RequestParam Map<String,String> param) throws IOException{
+	
+		File file = new File("output.html");
+		FileWriter fileWriter = new FileWriter(file);
+		fileWriter.write(param.toString());
+		fileWriter.flush();
+		fileWriter.close();
+		
+	
+		return null;
 	}
 	
 
