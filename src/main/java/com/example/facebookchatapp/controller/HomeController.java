@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String helloWorld(){
-		return "Hello world";
+		return "This is the new update";
 	}
 
 }
