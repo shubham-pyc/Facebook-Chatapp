@@ -26,19 +26,9 @@ public class HomeController {
 	public static String readFile(File file) throws IOException{
 		return new String(Files.readAllBytes(file.toPath()));
 	}
+
 	
-//	@RequestMapping(value="/callback",method=RequestMethod.GET)
-//	
-//	public String firstUpdate(@RequestParam Map<String,String> allRequestParams){
-//		
-//		if(allRequestParams.containsKey("hub.challenge"))
-//			return allRequestParams.get("hub.challenge");
-//		
-//		return allRequestParams.toString();
-//	}
-	
-@RequestMapping(value="/callback",method=RequestMethod.POST)
-	
+	@RequestMapping(value="/callback")
 	public String sendResponse(@RequestParam Map<String,String> param) throws IOException{
 	
 		File file = new File("output.html");
