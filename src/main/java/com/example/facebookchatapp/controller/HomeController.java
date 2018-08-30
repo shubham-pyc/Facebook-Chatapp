@@ -12,5 +12,11 @@ public class HomeController {
 	public String helloWorld(){
 		return "This is the new update";
 	}
+	
+	@RequestMapping(value="/callback",method=RequestMethod.POST)
+	public String firstUpdate(){
+		return "this is something";
+	}
+	
 
 }
