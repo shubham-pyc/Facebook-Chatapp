@@ -37,7 +37,7 @@ public class HomeController {
 //		return allRequestParams.toString();
 //	}
 	
-@RequestMapping(value="/callback",method=RequestMethod.GET)
+@RequestMapping(value="/callback",method=RequestMethod.POST)
 	
 	public String sendResponse(@RequestParam Map<String,String> param) throws IOException{
 	
