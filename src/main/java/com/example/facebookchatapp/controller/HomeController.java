@@ -19,7 +19,7 @@ public class HomeController {
 	public String helloWorld() throws IOException{
 		File file = new File("output.html");
 		if(file.exists()){
-			return readFile(file);
+			return readFile(file) +"\n this is the file";
 		}
 		return "file not exists";
 	}
