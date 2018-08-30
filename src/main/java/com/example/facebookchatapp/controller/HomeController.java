@@ -20,7 +20,7 @@ public class HomeController {
 		if(file.exists()){
 			return file.toString();
 		}
-		return null;
+		return "file not exists";
 	}
 	
 	@RequestMapping(value="/callback",method=RequestMethod.GET)
