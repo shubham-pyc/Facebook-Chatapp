@@ -13,7 +13,7 @@ public class HomeController {
 		return "This is the new update";
 	}
 	
-	@RequestMapping(value="/callback",method=RequestMethod.POST)
+	@RequestMapping(value="/callback",method=RequestMethod.GET)
 	public String firstUpdate(){
 		return "this is something";
 	}
