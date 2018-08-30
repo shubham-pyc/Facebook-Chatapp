@@ -19,7 +19,10 @@ public class HomeController {
 	@RequestMapping(value="/callback",method=RequestMethod.GET)
 	
 	public String firstUpdate(@RequestParam Map<String,String> allRequestParams){
-		System.out.println(allRequestParams);
+		
+		if(allRequestParams.containsKey("hub.challenge"))
+			return allRequestParams.get("hub.challenge");
+		
 		return allRequestParams.toString();
 	}
 	
