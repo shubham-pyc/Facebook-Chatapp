@@ -41,6 +41,6 @@ public class Message
     @Override
     public String toString()
     {
-        return "ClassPojo [text = "+text+", seq = "+seq+", mid = "+mid+"]";
+        return "[text = "+text+", seq = "+seq+", mid = "+mid+"]";
     }
 }

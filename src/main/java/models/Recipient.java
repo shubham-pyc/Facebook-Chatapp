@@ -18,6 +18,6 @@ this.id = id;
 @Override
 public String toString()
 {
-return "ClassPojo [id = "+id+"]";
+return "[id = "+id+"]";
 }
 }

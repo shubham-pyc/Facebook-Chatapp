@@ -53,6 +53,6 @@ public class Messaging
     @Override
     public String toString()
     {
-        return "ClassPojo [message = "+message+", timestamp = "+timestamp+", sender = "+sender+", recipient = "+recipient+"]";
+        return "[message = "+message+", timestamp = "+timestamp+", sender = "+sender+", recipient = "+recipient+"]";
     }
 }

@@ -1,5 +1,8 @@
 package models;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class FacebookRequest
 {
     private Entry[] entry;
@@ -29,6 +32,7 @@ public class FacebookRequest
     @Override
     public String toString()
     {
-        return "ClassPojo [entry = "+entry+", object = "+object+"]";
+    	Gson gson  = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+        return gson.toJson(this);
     }
 }
