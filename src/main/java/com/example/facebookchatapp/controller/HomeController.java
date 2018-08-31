@@ -7,8 +7,6 @@ import java.nio.file.Files;
 import models.FacebookRequest;
 import models.FacebookResponse;
 import models.IConstans;
-import models.Message;
-import models.Recipient;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +17,7 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.Version;
+import com.restfb.types.send.Message;
 import com.restfb.types.send.SendResponse;
 
 
@@ -45,9 +44,7 @@ public class HomeController {
 		
 		
 		FacebookResponse response = new FacebookResponse();
-		Message message = new Message();
-		message.setText("hello world from bot");
-		
+		Message message = new Message("hello world from bot");
 		String id = param.getEntry()[0].getMessaging()[0].getSender().getId();
 		sendMessage(id,message);
 		
