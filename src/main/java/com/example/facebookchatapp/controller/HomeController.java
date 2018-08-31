@@ -32,6 +32,7 @@ public class HomeController {
 	public String sendResponse(@RequestParam Map<String,String> param) throws IOException{
 	
 		File file = new File("output.html");
+		System.err.println("hello world this is just a check");
 		FileWriter fileWriter = new FileWriter(file);
 		fileWriter.write(param.toString());
 		fileWriter.flush();
