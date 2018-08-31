@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -29,7 +29,7 @@ public class HomeController {
 
 	
 	@RequestMapping(value="/callback")
-	public String sendResponse(@RequestParam Map<String,String> param) throws IOException{
+	public String sendResponse(@RequestBody Map<String,String> param) throws IOException{
 	
 		File file = new File("output.html");
 		System.out.println(param.toString());
