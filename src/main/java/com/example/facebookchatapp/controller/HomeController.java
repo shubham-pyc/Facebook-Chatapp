@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Map;
+
+import models.FacebookRequest;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,14 +30,9 @@ public class HomeController {
 
 	
 	@RequestMapping(value="/callback")
-	public String sendResponse(@RequestBody String param) throws IOException{
+	public String sendResponse(@RequestBody FacebookRequest param) throws IOException{
 	
-		File file = new File("output.html");
-		System.out.println(param.toString());
-		FileWriter fileWriter = new FileWriter(file);
-		fileWriter.write(param.toString());
-		fileWriter.flush();
-		fileWriter.close();
+		System.out.println(param);
 		
 	
 		return null;
