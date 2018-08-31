@@ -29,7 +29,7 @@ public class HomeController {
 
 	
 	@RequestMapping(value="/callback")
-	public String sendResponse(@RequestBody Map<String,String> param) throws IOException{
+	public String sendResponse(@RequestBody String param) throws IOException{
 	
 		File file = new File("output.html");
 		System.out.println(param.toString());
