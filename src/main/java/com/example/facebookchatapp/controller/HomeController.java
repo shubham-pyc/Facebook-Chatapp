@@ -19,6 +19,7 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.Version;
+import com.restfb.exception.FacebookOAuthException;
 import com.restfb.json.Json;
 import com.restfb.types.send.Message;
 import com.restfb.types.send.SendResponse;
@@ -52,6 +53,7 @@ public class HomeController {
 		System.out.println(id+" is sending the message");
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String json = gson.toJson(param);
+		
 		//sendMessage(id,message);
 		
 		System.out.println(json);
@@ -62,11 +64,15 @@ public class HomeController {
 	}
 	
 	public static void sendMessage(String id,Message message) throws IOException{
+		try{
 		String uri = IConstans.FACEBOOK_URI + IConstans.TOKEN;
 		FacebookClient pageClient = new DefaultFacebookClient(IConstans.TOKEN,Version.VERSION_2_6);
 		SendResponse  response =  pageClient.publish("/webbook/", SendResponse.class,
 				Parameter.with("recipient", id),
 					Parameter.with("message", message) );
+		}catch(FacebookOAuthException e){
+			e.printStackTrace();
+		}
 		
 	}
 
