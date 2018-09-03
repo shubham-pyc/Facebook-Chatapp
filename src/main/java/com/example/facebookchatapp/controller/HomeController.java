@@ -68,10 +68,11 @@ public class HomeController {
 		IdMessageRecipient recipent = new IdMessageRecipient(id);
 		String uri = IConstans.FACEBOOK_URI + IConstans.TOKEN;
 		FacebookClient pageClient = new DefaultFacebookClient(IConstans.TOKEN,Version.VERSION_2_6);
-		SendResponse  response =  pageClient.publish("/webbook/", SendResponse.class,
+		SendResponse  response =  pageClient.publish("me/messages", SendResponse.class,
 				Parameter.with("recipient", recipent),
 					Parameter.with("message", message) );
-		}catch(FacebookOAuthException e){
+			
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 		
