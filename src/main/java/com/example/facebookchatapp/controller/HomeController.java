@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.Version;
+import com.restfb.json.Json;
 import com.restfb.types.send.Message;
 import com.restfb.types.send.SendResponse;
 
@@ -46,9 +49,12 @@ public class HomeController {
 		FacebookResponse response = new FacebookResponse();
 		Message message = new Message("hello world from bot");
 		String id = param.getEntry()[0].getMessaging()[0].getSender().getId();
-		sendMessage(id,message);
+		System.out.println(id+" is sending the message");
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String json = gson.toJson(param);
+		//sendMessage(id,message);
 		
-		System.out.println("Success");
+		System.out.println(json);
 		
 		
 		
