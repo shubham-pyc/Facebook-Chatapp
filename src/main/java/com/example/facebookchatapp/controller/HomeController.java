@@ -57,8 +57,8 @@ public class HomeController {
 	
 	public static void sendMessage(String id,Message message) throws IOException{
 		String uri = IConstans.FACEBOOK_URI + IConstans.TOKEN;
-		FacebookClient pageClient = new DefaultFacebookClient(IConstans.TOKEN,Version.VERSION_2_9);
-		SendResponse  response =  pageClient.publish("/callback", SendResponse.class,
+		FacebookClient pageClient = new DefaultFacebookClient(IConstans.TOKEN,Version.VERSION_2_6);
+		SendResponse  response =  pageClient.publish("/webbook/", SendResponse.class,
 				Parameter.with("recipient", id),
 					Parameter.with("message", message) );
 		
