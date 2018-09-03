@@ -20,7 +20,7 @@ import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.Version;
 import com.restfb.exception.FacebookOAuthException;
-import com.restfb.json.Json;
+import com.restfb.types.send.IdMessageRecipient;
 import com.restfb.types.send.Message;
 import com.restfb.types.send.SendResponse;
 
@@ -65,10 +65,11 @@ public class HomeController {
 	
 	public static void sendMessage(String id,Message message) throws IOException{
 		try{
+		IdMessageRecipient recipent = new IdMessageRecipient(id);
 		String uri = IConstans.FACEBOOK_URI + IConstans.TOKEN;
 		FacebookClient pageClient = new DefaultFacebookClient(IConstans.TOKEN,Version.VERSION_2_6);
 		SendResponse  response =  pageClient.publish("/webbook/", SendResponse.class,
-				Parameter.with("recipient", id),
+				Parameter.with("recipient", recipent),
 					Parameter.with("message", message) );
 		}catch(FacebookOAuthException e){
 			e.printStackTrace();
