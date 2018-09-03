@@ -54,7 +54,7 @@ public class HomeController {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String json = gson.toJson(param);
 		
-		//sendMessage(id,message);
+		sendMessage(id,message);
 		
 		System.out.println(json);
 		
