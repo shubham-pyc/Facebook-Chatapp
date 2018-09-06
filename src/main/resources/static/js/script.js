@@ -1,5 +1,5 @@
 const port = 8080;
-const ip = "https://shubhamg2404.herokuapp.com";
+const ip = "http://localhost";
 
 
 (function() {

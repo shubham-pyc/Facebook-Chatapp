@@ -20,7 +20,7 @@ public class UserAgentMapping {
 	public  void operate(ChatMessage chatMessage){
 		chatMessage.setReceiver("admin");
 		chatMessage.setType(ChatMessage.MessageType.CHAT);
-		System.out.println("hello world");
+		System.out.println("sending message to admin/replys");
 		
 		messagingTemplate.convertAndSendToUser(chatMessage.getReceiver(),"/reply",chatMessage);
 		

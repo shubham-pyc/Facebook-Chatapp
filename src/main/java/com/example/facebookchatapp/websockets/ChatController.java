@@ -31,7 +31,7 @@ public class ChatController {
 	public void sendToUser(@Payload ChatMessage chatMessage) throws IOException{
 		String username = chatMessage.getReceiver();
 		String message = chatMessage.getMessage();
-		
+		System.out.println("sending message to facebook....");
 		facebookService.sendMessage(username, message);
 		templateMessage.convertAndSendToUser(chatMessage.getSender(),"/reply",chatMessage);
 		

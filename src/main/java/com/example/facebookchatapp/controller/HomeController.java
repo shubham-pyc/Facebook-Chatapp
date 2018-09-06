@@ -31,15 +31,16 @@ public class HomeController {
 		FacebookResponse response = new FacebookResponse();
 		String message = new String("hello world from bot");
 		String id = param.getEntry()[0].getMessaging()[0].getSender().getId();
-		
+		System.out.println("into the callback...!");
 		
 		ChatMessage chatMessage = new ChatMessage();
 		chatMessage.setSender(id);
 		chatMessage.setMessage(param.getEntry()[0].getMessaging()[0].getMessage().getText());
 		userAgentMapping.operate(chatMessage);
 		
-	
-		//FacebookService.sendMessage(id,message);
+		
+		
+		
 		
 		return null;
 	}
