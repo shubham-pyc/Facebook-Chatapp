@@ -1,4 +1,4 @@
-package models;
+package com.example.facebookchatapp.models;
 
 public interface IConstans {
 	public static final String TOKEN= "EAAEvuBuaZBqsBAFqoCZCYZAyiRJxQzxpRNSuTYYqcTkY7lF9dlZA5xJdtyrghya8VZCEkj4O50ZBimmTnetP3zGiYI5gGasEe0daOThIkZCjehIUHMZCibB0JvQJpiqYLqvgWeWV1TsfcFZBvNRZBo4jzvBQTosxU5ZBAAaaGMVT6kgzZBQRlPS1RtWryBdx4bKa6EUZD";

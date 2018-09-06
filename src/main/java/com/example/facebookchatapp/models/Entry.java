@@ -1,4 +1,4 @@
-package models;
+package com.example.facebookchatapp.models;
 
 public class Entry
 {
