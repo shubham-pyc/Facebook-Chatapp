@@ -13,6 +13,7 @@ import com.example.facebookchatapp.service.AgentService;
 @CrossOrigin(origins = "*")
 @RestController
 public class API {
+	
 	@RequestMapping(value="api/login")
 	public ResponseEntity login(@RequestBody Agent user){
 		
@@ -22,4 +23,7 @@ public class API {
 		}
 		return new ResponseEntity(true,HttpStatus.BAD_REQUEST);
 	}
+	
+	
+	
 }
